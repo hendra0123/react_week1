@@ -1,13 +1,24 @@
+import { useState } from "react";
 import "./App.css";
 import foto from "./foto.jpg";
 
 function App() {
+  const [isCircular, setIsCircular] = useState(false);
+
+  const imageClassName = {
+    width: "100%",
+    borderRadius: isCircular ? "50%" : "0%",
+  };
+
+  const toggleCircular = () => {
+    setIsCircular(!isCircular);
+  };
   return (
     <div className="container-full">
       <div className="atas">
         <div className="bagian-kiri">
           <div className="foto-profile">
-            <img src={foto} className="foto-atur" alt="foto" />
+            <img src={foto} className="foto-atur" style={imageClassName} alt="foto" />
           </div>
         </div>
 
@@ -46,6 +57,10 @@ function App() {
           quis finibus mauris vestibulum vitae. Vivamus pellentesque vel turpis
           sit amet suscipit. Morbi fringilla consequat convallis.
         </p>
+
+        <div className="buton">
+          <button onClick={toggleCircular}>Ubah Lingkaran Foto</button>
+        </div>
       </div>
     </div>
   );

@@ -81,3 +81,15 @@
 .bawah {
   border: 1.5px solid black;
 }
+
+.buton {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buton button {
+  color: coral;
+  width: 150px;
+  height: 60px;
+  font-size: 15px;
+}
